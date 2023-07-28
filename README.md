@@ -22,11 +22,11 @@ Hierarchy
     # The CMAKE_TOOLCHAIN_FILE variable is not used until the project() command is reached, at which point CMake looks for
     # the named toolchain file relative to the build directory.
     include(FetchContent)
-    FetchContent_Declare(toolchains URL https://codeload.github.com/cmake-embedded/toolchains/zip/refs/heads/main)
+    FetchContent_Declare(toolchains URL https://github.com/cmake-embedded/toolchains/archive/refs/heads/main.zip)
     FetchContent_MakeAvailable(toolchains)
     ```
 
-    > 💡 Get dependency version locked is usually considered a better practice to prevent dependency been broken, instead of always pointing to head version.
+    > 💡 Get dependency version locked is usually considered a better practice to prevent dependency been broken, instead of always pointing to head version. You can point to a tag or even a revision, please reference doc from GitHub to learn more: [downloading-source-code-archives](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives)
 
 2. Specify toolchain file with path relative to the build directory
 
