@@ -2,6 +2,10 @@ extern "C" void _exit(int) {
     while (1);
 }
 
+extern "C" void SystemInit() {
+    return;
+}
+
 #include <cmath>
 #include <array>
 
