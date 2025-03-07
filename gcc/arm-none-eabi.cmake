@@ -1,5 +1,6 @@
 if(NOT ARM_NONE_EABI_CONFIGURED)
 set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR arm)
 set(CMAKE_SYSTEM_VERSION 1)
 
 # specify cross compilers and tools
