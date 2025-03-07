@@ -38,8 +38,8 @@ jobs:
     - name: Configure CMake
       run: |
         cd test
-        cmake -S.  -B build --toolchain=../../gcc/arm-none-eabi/cortex-m0.cmake
-      
+        cmake -S .  -B build --toolchain=../../gcc/arm-none-eabi/cortex-m0.cmake -G 'Unix Makefiles'
+
     - name: Build
       run: |
         cmake --build test/build
