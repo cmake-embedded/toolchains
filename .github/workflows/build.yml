@@ -1,0 +1,45 @@
+name: Build with arm-none-eabi-gcc
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Install arm-none-eabi-gcc (Ubuntu)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-arm-none-eabi
+      
+    - name: Install arm-none-eabi-gcc (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        brew install --cask gcc-arm-embedded
+      
+    - name: Install arm-none-eabi-gcc (Windows)
+      if: matrix.os == 'windows-latest'
+      run: |
+        choco install gcc-arm-embedded -y
+      
+    - name: Configure CMake
+      run: |
+        cd test
+        cmake -S.  -B build --toolchain=../../gcc/arm-none-eabi/cortex-m0.cmake
+      
+    - name: Build
+      run: |
+        cmake --build test/build
