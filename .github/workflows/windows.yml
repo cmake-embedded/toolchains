@@ -1,0 +1,14 @@
+name: Build on Windows
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-test:
+    uses: ./.github/workflows/build.yml
+    with:
+      os: windows-latest
