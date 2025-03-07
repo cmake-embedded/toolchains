@@ -1,3 +1,7 @@
+[![Ubuntu](https://github.com/cmake-embedded/toolchains/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/cmake-embedded/toolchains/actions/workflows/ubuntu.yml)
+[![macOS](https://github.com/cmake-embedded/toolchains/actions/workflows/macos.yml/badge.svg)](https://github.com/cmake-embedded/toolchains/actions/workflows/macos.yml)
+[![Windows](https://github.com/cmake-embedded/toolchains/actions/workflows/windows.yml/badge.svg)](https://github.com/cmake-embedded/toolchains/actions/workflows/windows.yml)
+
 # CMake toolchain files for embedded
 
 Hierarchy
